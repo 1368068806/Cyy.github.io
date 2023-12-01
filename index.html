@@ -146,6 +146,81 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://1368068806.github.io/Cyy.github.io/2023/11/30/andriod-xml%E6%8E%A7%E4%BB%B6%E5%85%A8%E8%A7%A3%E4%B8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Cyy.github.io/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玉洋的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Cyy.github.io/2023/11/30/andriod-xml%E6%8E%A7%E4%BB%B6%E5%85%A8%E8%A7%A3%E4%B8%8B/" class="post-title-link" itemprop="url">andriod xml控件全解下</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-11-30 22:47:06" itemprop="dateCreated datePublished" datetime="2023-11-30T22:47:06+08:00">2023-11-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-12-01 15:43:15" itemprop="dateModified" datetime="2023-12-01T15:43:15+08:00">2023-12-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Android-EditText属性汇总"><a href="#Android-EditText属性汇总" class="headerlink" title="Android EditText属性汇总"></a>Android EditText属性汇总</h2><blockquote>
+<p><strong>android:layout_gravity&#x3D;”center_vertical”</strong><br>设置控件显示的位置：默认top，这里居中显示，还有**bottomandroid:hint&#x3D;”请输入数字”**设置显示在空间上的提示信息<br>**android:numeric&#x3D;”integer”**设置只能输入整数，如果是小数则是：decimal<br>**android:singleLine&#x3D;”true”**设置单行输入，一旦设置为true，则文字不会自动换行。<br>**android:password&#x3D;”true”**设置只能输入密码<br>**android:textColor&#x3D;”#ff8c00”**字体颜色<br>**android:textStyle&#x3D;”bold”**字体，bold,italic,bolditalic<br>**android:textSize&#x3D;”20dip”**大小<br>**android:capitalize&#x3D;”characters”**以大写字母写<br><strong>android:textAlign</strong>&#x3D;”center”EditText没有这个属性，但TextView有<br>**android:textColorHighlight&#x3D;”#cccccc”**被选中文字的底色，默认为蓝色<br>**android:textColorHint&#x3D;”#ffff00”**设置提示信息文字的颜色，默认为灰色<br>**android:textScaleX&#x3D;”1.5”**控制字与字之间的间距<br>**android:typeface&#x3D;”monospace”**字型normal,sans,serif,monospace<br>**android:background&#x3D;”@null”**空间背景，这里没有，指透明<br>**android:layout_weight&#x3D;”1”**权重，控制控件之间的地位,在控制控件显示的大小时蛮有用的。<br><strong>android:textAppearance&#x3D;”?android:attr&#x2F;textAppearanceLargeInverse”文</strong>字外观，这里引用的是系统自带的一个外观，？表示系统是否有这种外观，否则使用默认的外观。不知道这样理解对不对？</p>
+</blockquote>
+<blockquote>
+<h3 id="通过EditText的layout-xml文件中的相关属性来实现"><a href="#通过EditText的layout-xml文件中的相关属性来实现" class="headerlink" title="通过EditText的layout xml文件中的相关属性来实现:"></a>通过EditText的layout xml文件中的相关属性来实现:</h3><blockquote>
+<p>1.密码框属性android:password&#x3D;”true”这条可以让EditText显示的内容自动为星号，输入时内容会在1秒内变成*字样。<br>2.纯数字android:numeric&#x3D;”true”这条可以让输入法自动变为数字输入键盘，同时仅允许0-9的数字输入<br>3.仅允许android:capitalize&#x3D;”cwj1987”这样仅允许接受输入cwj1987，一般用于密码验证下面是一些扩展的风格属性<br>android:editable&#x3D;”false”设置EditText不可编辑<br>android:singleLine&#x3D;”true”强制输入的内容在单行<br>android:ellipsize&#x3D;”end”自动隐藏尾部溢出数据，一般用于文字内容过长一行无法全部显示时</p>
+</blockquote>
+</blockquote>
+<h2 id="RelativeLayout布局"><a href="#RelativeLayout布局" class="headerlink" title="RelativeLayout布局"></a>RelativeLayout布局</h2><blockquote>
+<p><strong>android:layout_marginTop&#x3D;”25dip”</strong>&#x2F;&#x2F;顶部距离<br><strong>android:gravity&#x3D;”left”</strong>&#x2F;&#x2F;空间布局位置<br><strong>android:layout_marginLeft&#x3D;”15dip</strong>&#x2F;&#x2F;距离左边距<br>&#x2F;&#x2F;相对于给定ID控件<br><strong>android:layout_above</strong>将该控件的底部置于给定ID的控件之上;<br><strong>android:layout_below</strong>将该控件的底部置于给定ID的控件之下;<br><strong>android:layout_toLeftOf</strong>将该控件的右边缘与给定ID的控件左边缘对齐;<br><strong>android:layout_toRightOf</strong>将该控件的左边缘与给定ID的控件右边缘对齐;<br><strong>android:layout_alignBaseline</strong>将该控件的baseline与给定ID的baseline对齐;<br><strong>android:layout_alignTop</strong>将该控件的顶部边缘与给定ID的顶部边缘对齐;<br><strong>android:layout_alignBottom</strong>将该控件的底部边缘与给定ID的底部边缘对齐;<br><strong>android:layout_alignLeft</strong>将该控件的左边缘与给定ID的左边缘对齐;<br><strong>android:layout_alignRight</strong>将该控件的右边缘与给定ID的右边缘对齐;<br>&#x2F;&#x2F;相对于父组件<br><strong>android:layout_alignParentTop</strong>如果为true,将该控件的顶部与其父控件的顶部对齐;<br><strong>android:layout_alignParentBottom</strong>如果为true,将该控件的底部与其父控件的底部对齐;<br><strong>android:layout_alignParentLeft</strong>如果为true,将该控件的左部与其父控件的左部对齐;<br><strong>android:layout_alignParentRigh</strong>t如果为true,将该控件的右部与其父控件的右部对齐;<br>&#x2F;&#x2F;居中<br><strong>android:layout_centerHorizontal</strong>如果为true,将该控件的置于水平居中;<br><strong>android:layout_centerVertical</strong>如果为true,将该控件的置于垂直居中;<br><strong>android:layout_centerInParent</strong>如果为true,将该控件的置于父控件的中央;<br>&#x2F;&#x2F;指定移动像素<br><strong>android:layout_marginTop</strong>上偏移的值;<br><strong>android:layout_marginBottom</strong>下偏移的值;<br><strong>android:layout_marginLeft</strong>左偏移的值;<br><strong>android:layout_marginRight</strong>右偏移的值;<br><strong>android:id</strong>—为控件指定相应的ID<br><strong>android:text</strong>—指定控件当中显示的文字，需要注意的是，这里尽量使用strings.xml文件当中的字符串<br><strong>android:grivity</strong>—指定控件的基本位置，比如说居中，居右等位置这里指的是控件中的文本位置并不是控件本身。<br><strong>android:textSize</strong>—指定控件当中字体的大小<br><strong>android:background</strong>—指定该控件所使用的背景色，RGB命名法<br><strong>android:width</strong>—指定控件的宽度<br><strong>android:height</strong>—指定控件的高度<br><strong>android:padding</strong>*—指定控件的内边距，也就是说控件当中的内容<br><strong>android:sigleLine</strong>—如果设置为真的话，则控件的内容在同一行中进行显示</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://1368068806.github.io/Cyy.github.io/2023/11/30/andriod-xml%E6%8E%A7%E4%BB%B6%E5%B8%83%E5%B1%80%E5%85%A8%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -694,7 +769,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Cyy.github.io/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
