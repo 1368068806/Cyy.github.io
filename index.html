@@ -146,6 +146,201 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://1368068806.github.io/Cyy.github.io/2023/12/05/SQL-grammer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Cyy.github.io/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玉洋的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/Cyy.github.io/2023/12/05/SQL-grammer/" class="post-title-link" itemprop="url">SQL_grammer</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-12-05 21:02:02" itemprop="dateCreated datePublished" datetime="2023-12-05T21:02:02+08:00">2023-12-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-12-09 22:28:52" itemprop="dateModified" datetime="2023-12-09T22:28:52+08:00">2023-12-09</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>​                                                              </p>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a><strong>查找</strong></h2><hr>
+<p>找列</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1,column2,...</span><br><span class="line"><span class="keyword">FROM</span> table_name;</span><br></pre></td></tr></table></figure>
+
+<p>找列中的元素</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> DESTINCT column1,...</span><br><span class="line"><span class="keyword">FROM</span> table_name ;</span><br></pre></td></tr></table></figure>
+
+<p>找行</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> 某个列名 <span class="operator">=</span> 具体的值;</span><br></pre></td></tr></table></figure>
+
+<p>用in可以指定多个值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> table_name1</span><br><span class="line"><span class="keyword">WHERE</span> column1 <span class="keyword">in</span> (value1,value2,...);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a><strong>插入</strong></h2><hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name1 <span class="keyword">VALUES</span>(valu1，value2，value3，value4);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name1（column1，column2，column3，column3）<span class="keyword">VALUES</span>（valu1，value2，value3，value4）;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a><strong>更新</strong></h2><hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span>  table_name1 <span class="keyword">SET</span> (valu1，value2，value3，value4) <span class="keyword">WHERE</span> column1 <span class="operator">=</span> valu1e;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a><strong>删除</strong></h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> 某个列名 <span class="operator">=</span> 具体的值</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a><strong>排序</strong></h2><hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 列名（<span class="keyword">DESC</span>倒序）</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="空值"><a href="#空值" class="headerlink" title="空值"></a><strong>空值</strong></h2><hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> 列名 <span class="keyword">IS</span> <span class="keyword">NULL</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> 列名 <span class="keyword">IS</span> <span class="keyword">not</span> <span class="keyword">NULL</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="and和or"><a href="#and和or" class="headerlink" title="and和or"></a><strong>and和or</strong></h2><hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> 列名（<span class="operator">&lt;&gt;</span><span class="operator">=</span>）值 <span class="keyword">and</span> 另一列名(<span class="operator">&lt;&gt;</span><span class="operator">=</span>)值（输出两条件都满足的列）</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> 列名（<span class="operator">&lt;&gt;</span><span class="operator">=</span>）值 <span class="keyword">or</span> 列名（<span class="operator">&lt;&gt;</span><span class="operator">=</span>）值（满足其中任意一条件就会输出）</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="limit"><a href="#limit" class="headerlink" title="limit"></a><strong>limit</strong></h2><hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> limit <span class="number">2</span>; (表示输出表的前两行)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="like"><a href="#like" class="headerlink" title="like"></a><strong>like</strong></h2><hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> 列名 <span class="keyword">like</span> <span class="operator">*</span><span class="operator">*</span>搜索模式<span class="operator">*</span><span class="operator">*</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>搜素模式</strong>有很多种，如下表</p>
+<table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%</td>
+<td>替代0个或多个字符。例如%o,o%,%o%,分别查找o结尾、开头、在中间</td>
+</tr>
+<tr>
+<td>—</td>
+<td>替代一个字符</td>
+</tr>
+<tr>
+<td>REGEXP(不用like)</td>
+<td>字符列中的任何单一字符。例如REGEXP ‘^[GFs]’，查找G、F、s开头的；REGEXP ‘^[^A-H]’,不已A-H开头的</td>
+</tr>
+<tr>
+<td>NOT REGEXP(不用like)</td>
+<td>不在字符列中的任何单一字符</td>
+</tr>
+</tbody></table>
+<h2 id="in"><a href="#in" class="headerlink" title="in"></a><strong>in</strong></h2><hr>
+<p>IN 操作符允许您在 WHERE 子句中规定多个值</p>
+<p>语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 要查询的列 <span class="keyword">FROM</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span> 列名 <span class="keyword">in</span>(该列要查询的具体值);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="between"><a href="#between" class="headerlink" title="between"></a><strong>between</strong></h2><hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 要查询的列名 <span class="keyword">FROM</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span> 列名 <span class="keyword">between</span> 值a <span class="keyword">and</span> 值b</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 要查询的列名 <span class="keyword">FROM</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span> 列名 <span class="keyword">not</span> <span class="keyword">between</span> 值a <span class="keyword">and</span> 值b</span><br></pre></td></tr></table></figure>
+
+
+
+<p>加入in可以实现更具体筛选</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 要查询的列 <span class="keyword">FROM</span> 表名c</span><br><span class="line"><span class="keyword">WHERE</span> 列名<span class="number">1</span> <span class="keyword">between</span> 值a <span class="keyword">and</span> 值b</span><br><span class="line"><span class="keyword">and</span> 列名<span class="number">2</span> <span class="keyword">NOT</span> <span class="keyword">IN</span>（值e，值f）</span><br></pre></td></tr></table></figure>
+
+<p>上面可以筛选出c表中1列值在a到b之间得行，但不包括2列中值为e和f得得行</p>
+<p>数字和字母都行</p>
+<h2 id="SQL别名"><a href="#SQL别名" class="headerlink" title="SQL别名"></a><strong>SQL别名</strong></h2><hr>
+<p>列得别名语法：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name <span class="keyword">AS</span> alias_name</span><br><span class="line"><span class="keyword">FROM</span> table_name;</span><br></pre></td></tr></table></figure>
+
+<p>表得别名语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name <span class="keyword">AS</span> alias_name;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="SQL-JOIN"><a href="#SQL-JOIN" class="headerlink" title="SQL JOIN"></a>SQL JOIN</h2><p>SQL JOIN 子句用于把来自两个或多个表的行结合起来，基于这些表之间的共同字段。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/01/sql-join.png" alt="img"></p>
+<p><strong>SQL INNER JOIN（简单的 JOIN）</strong>。 SQL INNER JOIN 从多个表中返回满足 JOIN 条件的所有行。</p>
+<h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ...</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">JOIN</span> table2 <span class="keyword">ON</span> <span class="keyword">condition</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://1368068806.github.io/Cyy.github.io/2023/11/30/andriod-xml%E6%8E%A7%E4%BB%B6%E5%85%A8%E8%A7%A3%E4%B8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -177,7 +372,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-12-01 15:43:15" itemprop="dateModified" datetime="2023-12-01T15:43:15+08:00">2023-12-01</time>
+                <time title="修改时间：2023-12-05 20:35:02" itemprop="dateModified" datetime="2023-12-05T20:35:02+08:00">2023-12-05</time>
               </span>
 
           
@@ -769,7 +964,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/Cyy.github.io/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

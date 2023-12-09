@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Cyy.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Cyy.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Cyy.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/Cyy.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/Cyy.github.io/css/main.css">
+
+
+<link rel="stylesheet" href="/Cyy.github.io/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"1368068806.github.io","root":"/Cyy.github.io/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="​                                                               查找 找列 12SELECT column1,column2,...FROM table_name;  找列中的元素 12SELECT DESTINCT column1,...FROM table_name ;  找行 12SELECT * FROM table_name">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL_grammer">
+<meta property="og:url" content="https://1368068806.github.io/Cyy.github.io/2023/12/05/SQL-grammer/index.html">
+<meta property="og:site_name" content="玉洋的博客">
+<meta property="og:description" content="​                                                               查找 找列 12SELECT column1,column2,...FROM table_name;  找列中的元素 12SELECT DESTINCT column1,...FROM table_name ;  找行 12SELECT * FROM table_name">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/01/sql-join.png">
+<meta property="article:published_time" content="2023-12-05T13:02:02.000Z">
+<meta property="article:modified_time" content="2023-12-09T14:28:52.431Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.runoob.com/wp-content/uploads/2019/01/sql-join.png">
+
+<link rel="canonical" href="https://1368068806.github.io/Cyy.github.io/2023/12/05/SQL-grammer/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>SQL_grammer | 玉洋的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/Cyy.github.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">玉洋的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">yy</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/Cyy.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/Cyy.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://1368068806.github.io/Cyy.github.io/2023/12/05/SQL-grammer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/Cyy.github.io/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玉洋的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SQL_grammer
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-12-05 21:02:02" itemprop="dateCreated datePublished" datetime="2023-12-05T21:02:02+08:00">2023-12-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-12-09 22:28:52" itemprop="dateModified" datetime="2023-12-09T22:28:52+08:00">2023-12-09</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>​                                                              </p>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a><strong>查找</strong></h2><hr>
+<p>找列</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1,column2,...</span><br><span class="line"><span class="keyword">FROM</span> table_name;</span><br></pre></td></tr></table></figure>
+
+<p>找列中的元素</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> DESTINCT column1,...</span><br><span class="line"><span class="keyword">FROM</span> table_name ;</span><br></pre></td></tr></table></figure>
+
+<p>找行</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> 某个列名 <span class="operator">=</span> 具体的值;</span><br></pre></td></tr></table></figure>
+
+<p>用in可以指定多个值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> table_name1</span><br><span class="line"><span class="keyword">WHERE</span> column1 <span class="keyword">in</span> (value1,value2,...);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a><strong>插入</strong></h2><hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name1 <span class="keyword">VALUES</span>(valu1，value2，value3，value4);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name1（column1，column2，column3，column3）<span class="keyword">VALUES</span>（valu1，value2，value3，value4）;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a><strong>更新</strong></h2><hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span>  table_name1 <span class="keyword">SET</span> (valu1，value2，value3，value4) <span class="keyword">WHERE</span> column1 <span class="operator">=</span> valu1e;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a><strong>删除</strong></h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> 某个列名 <span class="operator">=</span> 具体的值</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a><strong>排序</strong></h2><hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 列名（<span class="keyword">DESC</span>倒序）</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="空值"><a href="#空值" class="headerlink" title="空值"></a><strong>空值</strong></h2><hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> 列名 <span class="keyword">IS</span> <span class="keyword">NULL</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> 列名 <span class="keyword">IS</span> <span class="keyword">not</span> <span class="keyword">NULL</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="and和or"><a href="#and和or" class="headerlink" title="and和or"></a><strong>and和or</strong></h2><hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> 列名（<span class="operator">&lt;&gt;</span><span class="operator">=</span>）值 <span class="keyword">and</span> 另一列名(<span class="operator">&lt;&gt;</span><span class="operator">=</span>)值（输出两条件都满足的列）</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> 列名（<span class="operator">&lt;&gt;</span><span class="operator">=</span>）值 <span class="keyword">or</span> 列名（<span class="operator">&lt;&gt;</span><span class="operator">=</span>）值（满足其中任意一条件就会输出）</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="limit"><a href="#limit" class="headerlink" title="limit"></a><strong>limit</strong></h2><hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> limit <span class="number">2</span>; (表示输出表的前两行)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="like"><a href="#like" class="headerlink" title="like"></a><strong>like</strong></h2><hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> 列名 <span class="keyword">like</span> <span class="operator">*</span><span class="operator">*</span>搜索模式<span class="operator">*</span><span class="operator">*</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>搜素模式</strong>有很多种，如下表</p>
+<table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%</td>
+<td>替代0个或多个字符。例如%o,o%,%o%,分别查找o结尾、开头、在中间</td>
+</tr>
+<tr>
+<td>—</td>
+<td>替代一个字符</td>
+</tr>
+<tr>
+<td>REGEXP(不用like)</td>
+<td>字符列中的任何单一字符。例如REGEXP ‘^[GFs]’，查找G、F、s开头的；REGEXP ‘^[^A-H]’,不已A-H开头的</td>
+</tr>
+<tr>
+<td>NOT REGEXP(不用like)</td>
+<td>不在字符列中的任何单一字符</td>
+</tr>
+</tbody></table>
+<h2 id="in"><a href="#in" class="headerlink" title="in"></a><strong>in</strong></h2><hr>
+<p>IN 操作符允许您在 WHERE 子句中规定多个值</p>
+<p>语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 要查询的列 <span class="keyword">FROM</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span> 列名 <span class="keyword">in</span>(该列要查询的具体值);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="between"><a href="#between" class="headerlink" title="between"></a><strong>between</strong></h2><hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 要查询的列名 <span class="keyword">FROM</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span> 列名 <span class="keyword">between</span> 值a <span class="keyword">and</span> 值b</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 要查询的列名 <span class="keyword">FROM</span> 表名</span><br><span class="line"><span class="keyword">WHERE</span> 列名 <span class="keyword">not</span> <span class="keyword">between</span> 值a <span class="keyword">and</span> 值b</span><br></pre></td></tr></table></figure>
+
+
+
+<p>加入in可以实现更具体筛选</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 要查询的列 <span class="keyword">FROM</span> 表名c</span><br><span class="line"><span class="keyword">WHERE</span> 列名<span class="number">1</span> <span class="keyword">between</span> 值a <span class="keyword">and</span> 值b</span><br><span class="line"><span class="keyword">and</span> 列名<span class="number">2</span> <span class="keyword">NOT</span> <span class="keyword">IN</span>（值e，值f）</span><br></pre></td></tr></table></figure>
+
+<p>上面可以筛选出c表中1列值在a到b之间得行，但不包括2列中值为e和f得得行</p>
+<p>数字和字母都行</p>
+<h2 id="SQL别名"><a href="#SQL别名" class="headerlink" title="SQL别名"></a><strong>SQL别名</strong></h2><hr>
+<p>列得别名语法：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name <span class="keyword">AS</span> alias_name</span><br><span class="line"><span class="keyword">FROM</span> table_name;</span><br></pre></td></tr></table></figure>
+
+<p>表得别名语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s)</span><br><span class="line"><span class="keyword">FROM</span> table_name <span class="keyword">AS</span> alias_name;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="SQL-JOIN"><a href="#SQL-JOIN" class="headerlink" title="SQL JOIN"></a>SQL JOIN</h2><p>SQL JOIN 子句用于把来自两个或多个表的行结合起来，基于这些表之间的共同字段。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/01/sql-join.png" alt="img"></p>
+<p><strong>SQL INNER JOIN（简单的 JOIN）</strong>。 SQL INNER JOIN 从多个表中返回满足 JOIN 条件的所有行。</p>
+<h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ...</span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">JOIN</span> table2 <span class="keyword">ON</span> <span class="keyword">condition</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Cyy.github.io/2023/11/30/andriod-xml%E6%8E%A7%E4%BB%B6%E5%85%A8%E8%A7%A3%E4%B8%8B/" rel="prev" title="andriod xml控件全解下">
+      <i class="fa fa-chevron-left"></i> andriod xml控件全解下
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE"><span class="nav-number">1.</span> <span class="nav-text">查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0"><span class="nav-number">3.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4"><span class="nav-number">4.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="nav-number">5.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E5%80%BC"><span class="nav-number">6.</span> <span class="nav-text">空值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#and%E5%92%8Cor"><span class="nav-number">7.</span> <span class="nav-text">and和or</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#limit"><span class="nav-number">8.</span> <span class="nav-text">limit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#like"><span class="nav-number">9.</span> <span class="nav-text">like</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#in"><span class="nav-number">10.</span> <span class="nav-text">in</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#between"><span class="nav-number">11.</span> <span class="nav-text">between</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL%E5%88%AB%E5%90%8D"><span class="nav-number">12.</span> <span class="nav-text">SQL别名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-JOIN"><span class="nav-number">13.</span> <span class="nav-text">SQL JOIN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95%EF%BC%9A"><span class="nav-number">13.1.</span> <span class="nav-text">语法：</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/Cyy.github.io/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/Cyy.github.io/lib/anime.min.js"></script>
+  <script src="/Cyy.github.io/lib/velocity/velocity.min.js"></script>
+  <script src="/Cyy.github.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/Cyy.github.io/js/utils.js"></script>
+
+<script src="/Cyy.github.io/js/motion.js"></script>
+
+
+<script src="/Cyy.github.io/js/schemes/muse.js"></script>
+
+
+<script src="/Cyy.github.io/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
